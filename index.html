@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* LOCK SCREEN */
+#lockScreen{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg,#ff69b4,#6a5acd,#00bfff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    overflow: hidden;
+}
+
+/* CONTENT */
+.lock-content{
+    text-align: center;
+    color: white;
+    animation: fadeIn 2s ease;
+}
+
+.lock-content h1{
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+/* COUNTDOWN */
+.countdown-box{
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.countdown-box div{
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 20px;
+    min-width: 120px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    animation: float 3s infinite ease-in-out;
+}
+
+.countdown-box h2{
+    font-size: 3rem;
+}
+
+.unlock-text{
+    margin-top: 30px;
+    font-size: 1.3rem;
+}
+
+/* FLOAT EFFECT */
+@keyframes float{
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-10px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* FADE */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #205ae3, #4cb1e8, #2e60d6);
+      overflow-x: hidden;
+      color: white;
+    }
+
+    /* Animated Background */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .stars span {
+      position: absolute;
+      display: block;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      animation: animateStars 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes animateStars {
+      0% {
+        transform: translateY(0px);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px);
+        opacity: 0;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 20px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 5rem;
+      font-family: 'Dancing Script', cursive;
+      color: #ff4d94;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff4d94;
+      }
+      to {
+        text-shadow: 0 0 25px #ff4d94, 0 0 50px #ff1f75;
+      }
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      max-width: 700px;
+      color: #d1d5db;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 14px 35px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(45deg, #ff4d94, #ff1f75);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 10px 25px rgba(255, 77, 148, 0.4);
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+    }
+
+    /* Floating Balloons */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 80px;
+      animation: float 12s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+      }
+    }
+
+    /* Memory Section */
+    .memories {
+      padding: 100px 10%;
+      text-align: center;
+    }
+
+    .memories h2 {
+      font-size: 3rem;
+      margin-bottom: 50px;
+      color: #ff4d94;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.4s;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(255,255,255,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      padding: 20px;
+      font-size: 1.2rem;
+    }
+
+    /* Countdown */
+    .countdown {
+      padding: 100px 20px;
+      text-align: center;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .countdown h2 {
+      font-size: 3rem;
+      color: #ff4d94;
+      margin-bottom: 40px;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      background: rgba(255,255,255,0.08);
+      padding: 25px;
+      border-radius: 20px;
+      min-width: 130px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .time-box h3 {
+      font-size: 3rem;
+      color: #ff4d94;
+    }
+
+    /* Surprise Section */
+   .surprise{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.gift-title{
+    font-size:3rem;
+    color:#ff4d94;
+    margin-bottom:30px;
+}
+
+.gift{
+    width:180px;
+    cursor:pointer;
+    transition:0.4s;
+    animation: float 2s infinite ease-in-out;
+}
+
+.gift:hover{
+    transform:scale(1.1) rotate(5deg);
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* Message Box */
+
+/* MESSAGE BOX */
+
+.message-box{
+    width:85%;
+    margin:40px auto;
+    padding:30px;
+    min-height:250px;
+    border-radius:20px;
+    background:white !important;
+    border:3px solid hotpink;
+}
+
+.typing-message{
+    color:#000000 !important;
+    font-size:28px !important;
+    font-weight:bold;
+    line-height:2.2rem;
+    font-family:Poppins,sans-serif;
+    white-space:pre-wrap;
+    word-break:break-word;
+    display:block !important;
+    opacity:1 !important;
+    visibility:visible !important;
+}
+
+@keyframes cursorBlink{
+    50%{
+        border-color:transparent;
+    }
+}
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #020617;
+      color: #94a3b8;
+    }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .countdown h2,
+      .memories h2 {
+        font-size: 2.2rem;
+      }
+    }
+
+    /* Album Popup */
+
+.album-popup{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000000ee;
+  z-index:99999;
+  display:none;
+  overflow-y:auto;
+  padding:50px;
+}
+
+.album-content{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.album-content img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:20px;
+  transition:0.4s;
+  cursor:pointer;
+}
+
+.album-content img:hover{
+  transform:scale(1.05);
+}
+
+.close-btn{
+  position:absolute;
+  top:20px;
+  right:40px;
+  font-size:35px;
+  color:white;
+  cursor:pointer;
+}
+
+/* Full Image Viewer */
+
+.full-image{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000000f2;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:100000;
+}
+
+.full-image img{
+  max-width:90%;
+  max-height:85%;
+  border-radius:20px;
+}
+
+.close-full{
+  position:absolute;
+  top:20px;
+  right:40px;
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+}
+
+/* INTRO VIDEO */
+
+#introAnimation{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:999999;
+  overflow:hidden;
+  background:black;
+}
+
+#animationVideo{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.intro-overlay{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  color:white;
+}
+
+.intro-overlay h1{
+  font-size:5rem;
+  color:#ff4d94;
+  animation:glow 2s infinite alternate;
+}
+
+.intro-overlay p{
+  margin-top:20px;
+  font-size:1.5rem;
+}
+
+/* SPECIAL VIDEO */
+
+.special-video-section{
+  padding:120px 20px;
+  text-align:center;
+}
+
+.special-video-section h1{
+  font-size:4rem;
+  color:#ff4d94;
+  margin-bottom:20px;
+}
+
+.special-video-section p{
+  color:#cbd5e1;
+  margin-bottom:40px;
+}
+
+.video-container{
+  width:90%;
+  max-width:1000px;
+  margin:auto;
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+.video-container video{
+  width:100%;
+  display:block;
+}
+
+video{
+  transition:0.5s;
+}
+
+video:hover{
+  transform:scale(1.02);
+  box-shadow:0 0 40px #ff4d94;
+}
+
+.special-video-section{
+  animation:fadeMovie 2s ease;
+}
+
+@keyframes fadeMovie{
+
+  from{
+    opacity:0;
+    transform:translateY(80px);
+    filter:blur(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+  }
+}
+
+.music-btn{
+
+  margin-top:30px;
+  padding:15px 35px;
+  border:none;
+  border-radius:50px;
+
+  background:linear-gradient(45deg,#ff4d94,#ff1f75);
+
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+
+  transition:0.4s;
+
+  box-shadow:0 10px 30px rgba(255,77,148,0.4);
+}
+
+.music-btn:hover{
+
+  transform:scale(1.08);
+}
+  </style>
+</head>
+<body>
+  <!-- LOCK SCREEN -->
+<div id="lockScreen">
+
+    <div class="lock-content">
+        <h1>🎉 Special Surprise Unlocks In 🎉</h1>
+
+        <div class="countdown-box">
+            <div>
+                <h2 id="days">00</h2>
+                <p>Days</p>
+            </div>
+
+            <div>
+                <h2 id="hours">00</h2>
+                <p>Hours</p>
+            </div>
+
+            <div>
+                <h2 id="minutes">00</h2>
+                <p>Minutes</p>
+            </div>
+
+            <div>
+                <h2 id="seconds">00</h2>
+                <p>Seconds</p>
+            </div>
+        </div>
+
+        <p class="unlock-text">✨ Website will unlock automatically ✨</p>
+    </div>
+
+</div>
+
+<!-- MAIN WEBSITE -->
+<div id="mainWebsite" style="display:none;">
+
+  <!-- Background Stars -->
+  <div class="stars"></div>
+
+  <!-- Balloons -->
+  <img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png" class="balloon" style="left:10%; animation-duration: 10s;">
+  <img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png" class="balloon" style="left:45%; animation-duration: 14s; width:90px;">
+  <img src="https://cdn-icons-png.flaticon.com/512/3468/3468377.png" class="balloon" style="left:80%; animation-duration: 12s; width:70px;">
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>🎉 Happy Birthday 🎂</h1>
+    <p>
+      Wishing you endless happiness, unforgettable memories, and a year full of success, laughter, and love.
+    </p>
+    <button class="btn" onclick="scrollToMemories()">Explore Memories</button>
+    <button class="music-btn" onclick="toggleMusic()">
+
+  🎵 Play Music
+
+</button>
+  </section>
+
+  <!-- Memories -->
+  <section class="memories" id="memories">
+  <h2>Beautiful Memories ✨</h2>
+
+  <div class="gallery">
+
+    <div class="card" onclick="openAlbum('album1')">
+      <img src="images/photo1.jpeg">
+      <h3>Photo Sessions ❤️</h3>
+    </div>
+
+    <div class="card" onclick="openAlbum('album2')">
+      <img src="images/photo19.jpeg">
+      <h3>College Days 🎓</h3>
+    </div>
+
+    <div class="card" onclick="openAlbum('album3')">
+      <img src="images/photo45.jpeg">
+      <h3>Special peoples ✨</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- Album Popup -->
+
+<div class="album-popup" id="albumPopup">
+
+  <span class="close-btn" onclick="closeAlbum()">✖</span>
+
+  <div class="album-content" id="albumContent">
+
+  </div>
+
+  <!-- Full Image Viewer -->
+
+<div class="full-image" id="fullImageBox">
+
+  <span class="close-full" onclick="closeFullImage()">✖</span>
+
+  <img id="fullImage">
+
+</div>
+
+</div>
+
+  
+
+  <!-- Surprise -->
+  <section class="surprise">
+
+    <h2 class="gift-title">
+        Click The Gift (on sun)🎁
+    </h2>
+
+    <!-- Gift Image -->
+   <img 
+id="giftButton"
+src="https://cdn-icons-png.flaticon.com/512/869/869869.png"
+class="gift">
+
+    <!-- Hidden Message -->
+    <div class="message-box">
+    <p class="typing-message"></p>
+</div>
+
+</section>
+<!-- SPECIAL VIDEO SECTION -->
+
+<section class="special-video-section">
+
+  <h1>🎥 Special Birthday Video ❤️</h1>
+
+  <p>
+    A collection of unforgettable moments ✨
+  </p>
+
+  <div class="video-container">
+
+    <video controls autoplay muted loop>
+
+      <source src="video/birthday.mp4" type="video/mp4">
+
+    </video>
+
+  </div>
+
+</section>
+  <footer>
+    Made with ❤️
+  </footer>
+
+  <script>
+    // Scroll Function
+    function scrollToMemories() {
+      document.getElementById('memories').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    // Gift Message
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+      launchConfetti();
+    }
+
+    
+    // Create Stars
+    const starsContainer = document.querySelector('.stars');
+
+    for (let i = 0; i < 120; i++) {
+      let star = document.createElement('span');
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.animationDuration = (Math.random() * 10 + 5) + 's';
+      star.style.width = star.style.height = Math.random() * 4 + 'px';
+      starsContainer.appendChild(star);
+    }
+
+    // Confetti Effect
+    function launchConfetti() {
+      for (let i = 0; i < 80; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.position = 'fixed';
+        confetti.style.width = '10px';
+        confetti.style.height = '10px';
+        confetti.style.background = `hsl(${Math.random() * 360},100%,50%)`;
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.top = '-10px';
+        confetti.style.zIndex = '9999';
+        confetti.style.borderRadius = '50%';
+        document.body.appendChild(confetti);
+
+        let fall = Math.random() * 5 + 3;
+
+        confetti.animate([
+          { transform: 'translateY(0px) rotate(0deg)' },
+          { transform: `translateY(${window.innerHeight + 100}px) rotate(720deg)` }
+        ], {
+          duration: fall * 1000,
+          easing: 'linear'
+        });
+
+        setTimeout(() => {
+          confetti.remove();
+        }, fall * 1000);
+      }
+    }
+
+    const albums = {
+
+  album1: [
+    "images/photo1.jpeg",
+    "images/photo2.jpeg",
+    "images/photo3.jpeg",
+    "images/photo4.jpeg",
+    "images/photo5.jpeg",
+    "images/photo6.jpeg",
+    "images/photo7.jpeg",
+    "images/photo8.jpeg",
+    "images/photo9.jpeg",
+    "images/photo10.jpeg",
+    "images/photo11.jpeg",
+    "images/photo12.jpeg",
+    "images/photo13.jpeg",
+    "images/photo14.jpeg",
+    "images/photo15.jpeg",
+  ],
+
+  album2: [
+    
+    "images/photo16.jpeg",
+    "images/photo17.jpeg",
+    "images/photo18.jpeg",
+    "images/photo19.jpeg",
+    "images/photo20.jpeg",
+    "images/photo21.jpeg",
+    "images/photo22.jpeg",
+    "images/photo23.jpeg",
+    "images/photo24.jpeg",
+    "images/photo25.jpeg",
+    "images/photo26.jpeg",
+    "images/photo27.jpeg",
+    "images/photo28.jpeg",
+    "images/photo29.jpeg",
+    "images/photo30.jpeg",
+  ],
+
+  album3: [
+    
+    "images/photo31.jpeg",
+    "images/photo32jpeg",
+    "images/photo33.jpeg",
+    "images/photo34.jpeg",
+    "images/photo35.jpeg",
+    "images/photo36.jpeg",
+    "images/photo37.jpeg",
+    "images/photo38.jpeg",
+    "images/photo39.jpeg",
+    "images/photo40.jpeg",
+    "images/photo41.jpeg",
+    "images/photo42.jpeg",
+    "images/photo43.jpeg",
+    "images/photo44.jpeg",
+    "images/photo45.jpeg",
+  ]
+};
+
+function openAlbum(albumName){
+
+  const popup = document.getElementById("albumPopup");
+  const content = document.getElementById("albumContent");
+
+  content.innerHTML = "";
+
+  albums[albumName].forEach(image => {
+
+    content.innerHTML += `
+      <img src="${image}" onclick="openFullImage('${image}')">
+    `;
+
+  });
+
+  popup.style.display = "block";
+}
+
+function closeAlbum(){
+  document.getElementById("albumPopup").style.display = "none";
+}
+
+function openFullImage(image){
+
+  document.getElementById("fullImageBox").style.display = "flex";
+
+  document.getElementById("fullImage").src = image;
+}
+
+function closeFullImage(){
+
+  document.getElementById("fullImageBox").style.display = "none";
+}
+
+// AUTO HIDE INTRO VIDEO
+
+setTimeout(() => {
+
+  document.getElementById("introAnimation").style.display = "none";
+
+}, 7000);
+
+const music = document.getElementById("bgMusic");
+
+function toggleMusic(){
+
+  if(music.paused){
+
+    music.play();
+
+    document.querySelector(".music-btn").innerHTML =
+    "⏸ Pause Music";
+
+  } else {
+
+    music.pause();
+
+    document.querySelector(".music-btn").innerHTML =
+    "🎵 Play Music";
+  }
+}
+
+
+
+const textMessage = `🌟 Happiest Birthday 💫
+May all your dreams come true, wishing you the very best in each and everything!
+Thank you for being there and thank you for being you.
+You are one of the most amazing people I know, and I’m truly lucky to have you as a friend in my life.
+Your smile, kindness, and positive energy make every moment brighter.
+On your special day, I wish you endless happiness, success, love, and beautiful memories that last forever.
+Keep shining and being the wonderful person you are. 💖✨`;
+
+let i = 0;
+
+document.getElementById("giftButton").addEventListener("click", function(){
+
+    const typingElement = document.querySelector(".typing-message");
+
+    typingElement.innerHTML = "";
+
+    function typing(){
+
+        if(i < textMessage.length){
+
+            typingElement.innerHTML += textMessage.charAt(i);
+
+            i++;
+
+            setTimeout(typing,50);
+        }
+    }
+
+    typing();
+
+});
+
+window.addEventListener("load", () => {
+    const music = document.getElementById("bgMusic");
+
+    // Try autoplay
+    music.play().catch(() => {
+
+        // If blocked, start after user click
+        document.body.addEventListener("click", () => {
+            music.play();
+        }, { once: true });
+
+    });
+});
+
+
+
+// SET UNLOCK DATE
+const unlockDate = new Date("May 18, 2026 24:00:00").getTime();
+
+const timer = setInterval(function(){
+
+    const now = new Date().getTime();
+
+    const distance = unlockDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    // UNLOCK WEBSITE
+    if(distance < 0){
+
+        clearInterval(timer);
+
+        document.getElementById("lockScreen").style.display = "none";
+
+        document.getElementById("mainWebsite").style.display = "block";
+    }
+
+},1000);
+
+
+
+  </script>
+
+
+<!-- INTRO ANIMATION VIDEO -->
+
+<div id="introAnimation">
+
+  <video autoplay muted playsinline id="animationVideo">
+
+    <source src="video/animation.mp4" type="video/mp4">
+
+  </video>
+
+  <div class="intro-overlay">
+
+    <h1>✨ A Special Surprise ✨</h1>
+
+    <p>Loading beautiful memories...</p>
+
+  </div>
+
+</div>
+<!-- BACKGROUND MUSIC -->
+
+<audio id="bgMusic" loop>
+
+  <source src="music/song.mpeg" type="audio/mpeg">
+
+</audio>
+</div>
+</body>
+</html>
